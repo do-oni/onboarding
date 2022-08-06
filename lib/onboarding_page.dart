@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:onboarding/home_page.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({Key? key}) : super(key: key);
@@ -52,7 +53,13 @@ class OnboardingPage extends StatelessWidget {
         ],
         next: Text("Next", style: TextStyle(fontWeight: FontWeight.w600)),
         done: Text("Done", style: TextStyle(fontWeight: FontWeight.w600)),
-        onDone: () {},
+        onDone: () {
+          // Done 클릭 시 페이지 이동
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => HomePage()),
+          );
+        },
       ),
     );
   }
